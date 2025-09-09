@@ -13,7 +13,7 @@ $conf['site_lang'] = 'en';
 //Email configurations
 $conf['mail_type'] = 'smtp';
 $conf['smtp_host'] = 'stmp.gmail.com';
-$conf['smtp_user'] = 'rdfc skav zlty aein';
+$conf['smtp_user'] = '';
 $conf['smtp_port'] = 465;
 $conf['smtp_secure'] = 'ssl'; //ssl or tls
 
