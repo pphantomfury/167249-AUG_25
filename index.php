@@ -1,17 +1,18 @@
 <?php
-//Include the ClassAutoLoad Method
+require 'Plugins/vendor/autoload.php';
 require_once 'ClassAutoLoad.php';
+require_once 'conf.php';
 
-//Display the header
-$layout->header();
+$ObjLayout = new layout();
+$forms = new forms();
+$ObjSendMail = new SendMail();
 
-//Call the greet method
-print $hello->greet();
+$content = $forms->handleSignupForm($ObjSendMail, $conf);
 
-//Call the today method
-print $hello->today();
 
-//Display the signup form
-print $forms->signup();
-
-$layout->footer();
+$ObjLayout->header($conf);
+$ObjLayout->nav($conf);
+$ObjLayout->banner($conf);
+$ObjLayout->content($content);
+$ObjLayout->footer($conf);
+?>
